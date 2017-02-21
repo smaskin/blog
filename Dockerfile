@@ -1,15 +1,14 @@
-FROM node:boron
+FROM node
 
-# Create app directory
-RUN mkdir -p /app
-WORKDIR /app
+RUN mkdir /src
+RUN npm install nodemon -g
+WORKDIR /src
 
-# Install app dependencies
-COPY package.json /app
+ADD app/package.json /src/package.json
 RUN npm install
 
-# Bundle app source
-COPY . /app
+ADD app/nodemon.json /src/nodemon.json
 
 EXPOSE 3000
-CMD [ "npm", "start" ]
+
+CMD npm start
