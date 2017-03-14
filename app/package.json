@@ -1,14 +1,12 @@
 {
-  "name": "app",
+  "name": "blog",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon -L app/bin/www"
+    "start": "nodemon -L app/index.js"
   },
   "dependencies": {
-    "express": "~4.9.0",
-    "mongoose": "^4.8.2",
-    "body-parser": "~1.8.1",
-    "method-override":"*"
+    "restify": "*",
+    "mongoose": "*"
   }
 }
